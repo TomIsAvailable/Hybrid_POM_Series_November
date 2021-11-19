@@ -20,20 +20,23 @@ public class LoginPage {
 
 	private WebDriver driver;
 	private ElementUtils elementUtils;
+	private AccountsPage accountsPage;
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 		elementUtils = new ElementUtils(this.driver);
+		accountsPage = new AccountsPage(driver);
 	}
 
 	public String getLoginPageTitle() {
 		return elementUtils.getPageTitle();
 	}
 
-	public void loginOpenCart(String uname, String pwd) {
+	public AccountsPage loginOpenCart(String uname, String pwd) {
 		elementUtils.doSendKeys(username, uname);
 		elementUtils.doSendKeys(password, pwd);
 		elementUtils.clickAnElement(login);
+		return accountsPage;
 	}
 
 	public boolean loginLinkExist() {

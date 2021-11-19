@@ -52,4 +52,9 @@ public class ElementUtils {
 		return driver.getTitle();
 	}
 
+	public String getPageUrl() {
+
+		return driver.getCurrentUrl();
+	}
+
 }
