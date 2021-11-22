@@ -20,6 +20,7 @@ public class DriverFactory {
 
 	private Properties prop;
 	private WebDriver driver;
+	public static String border = "hightlight";
 
 	public Properties init_prop() {
 		try {
@@ -36,9 +37,10 @@ public class DriverFactory {
 		return prop;
 	}
 
-	public WebDriver init_driver() {
+	public WebDriver init_driver(Properties prop) {
 
-		String browserName = init_prop().getProperty("browser");
+		String browserName = prop.getProperty("browser");
+		border = prop.getProperty("hightlight");
 		System.out.println("Browser started=========> " + browserName.toUpperCase());
 		switch (browserName.toUpperCase()) {
 		case "CHROME":
@@ -57,7 +59,7 @@ public class DriverFactory {
 			System.out.println("Please pass the right browser name " + browserName);
 
 		}
-		driver.get(init_prop().getProperty("url"));
+		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		return driver;

@@ -7,5 +7,6 @@ public class Constant {
 	public static final String ACCOUNT_HEADER_SHEETNAME = "AccountPageHeaders";
 	public static final String ACCOUNT_FOOTER_SHEETNAME = "AccountPageFooters";
 	public static final String ACCOUNT_PAGE_LIST = "AccountPageList";
+	public static final int ACCOUNT_FOOTER_SIZE = 4;
 
 }

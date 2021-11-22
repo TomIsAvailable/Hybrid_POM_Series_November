@@ -6,9 +6,9 @@
       <class name="com.qa.opencart.test.AccountsPageTest">
         <methods>
           <include name="setUp"/>
-          <include name="accountsPageList"/>
           <include name="tearDown"/>
           <include name="accountsPageSetup"/>
+          <include name="searchResutsTest"/>
         </methods>
       </class> <!-- com.qa.opencart.test.AccountsPageTest -->
     </classes>
