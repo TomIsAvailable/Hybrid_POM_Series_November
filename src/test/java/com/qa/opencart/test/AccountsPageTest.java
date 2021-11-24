@@ -1,15 +1,12 @@
 package com.qa.opencart.test;
 
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.qa.opencart.pages.ProductInfoPage;
 import com.qa.opencart.utils.Constant;
 
 public class AccountsPageTest extends BaseTest {
@@ -60,16 +57,17 @@ public class AccountsPageTest extends BaseTest {
 
 	// Imac, Macbook Pro, Macbook Air
 
-	/*
-	 * @DataProvider(name = "PRODUCTS") public Object[][] getProductList() {
-	 * 
-	 * return new Object[][] { { "IMac" }, { "Macbook Pro" }, { "Macbook Air" } }; }
-	 * 
-	 * @Test(dataProvider = "PRODUCTS", priority = 4) public void searchTest(String
-	 * productName) {
-	 * 
-	 * accountsPage.doSearchProduct(productName); }
-	 */
+	@DataProvider(name = "PRODUCTS")
+	public Object[][] getProductList() {
+
+		return new Object[][] { { "IMac" }, { "Macbook Pro" }, { "Macbook Air" } };
+	}
+
+	@Test(dataProvider = "PRODUCTS", priority = 4)
+	public void searchTest(String productName) {
+
+		accountsPage.doSearchProduct(productName);
+	}
 
 	@DataProvider(name = "PRO_LIST")
 	public Object[][] PRO_LIST() {

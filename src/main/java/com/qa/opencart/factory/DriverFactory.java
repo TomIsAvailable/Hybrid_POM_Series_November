@@ -7,7 +7,9 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -18,9 +20,10 @@ init_driver
 */
 public class DriverFactory {
 
-	private Properties prop;
-	private WebDriver driver;
+	public Properties prop;
+	public WebDriver driver;
 	public static String border = "hightlight";
+	private OptionsManager optionsManager;
 
 	public Properties init_prop() {
 		try {
@@ -41,11 +44,13 @@ public class DriverFactory {
 
 		String browserName = prop.getProperty("browser");
 		border = prop.getProperty("hightlight");
+		optionsManager = new OptionsManager(prop);
+
 		System.out.println("Browser started=========> " + browserName.toUpperCase());
 		switch (browserName.toUpperCase()) {
 		case "CHROME":
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(optionsManager.getChromeOptions());
 			break;
 		case "IE":
 			WebDriverManager.iedriver().setup();
@@ -53,7 +58,7 @@ public class DriverFactory {
 			break;
 		case "FF":
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			driver = new FirefoxDriver(optionsManager.getFirefoxOptions());
 			break;
 		default:
 			System.out.println("Please pass the right browser name " + browserName);

@@ -5,8 +5,6 @@ import org.testng.annotations.Test;
 
 import com.qa.opencart.utils.Constant;
 
-
-
 public class LoginPageTest extends BaseTest {
 
 	@Test(priority = 1)
