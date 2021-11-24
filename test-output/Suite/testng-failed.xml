@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="classes" name="Test(failed)">
     <classes>
-      <class name="com.qa.opencart.test.AccountsPageTest">
+      <class name="staticWebDriver.TestOneWithStaticWebDriver">
         <methods>
           <include name="setUp"/>
-          <include name="accountPageUrlTest"/>
+          <include name="GoogleTest"/>
           <include name="tearDown"/>
-          <include name="accountPageHeadersTest"/>
-          <include name="accountsPageSetup"/>
         </methods>
-      </class> <!-- com.qa.opencart.test.AccountsPageTest -->
+      </class> <!-- staticWebDriver.TestOneWithStaticWebDriver -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

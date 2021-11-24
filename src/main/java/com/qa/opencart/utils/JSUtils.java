@@ -23,4 +23,15 @@ public class JSUtils {
 
 	}
 
+	public void scrollDownToElement(WebElement ele) {
+
+		jse.executeScript("arguments[0].scrollIntoView(true);", ele);
+	}
+
+	public void clickAnElementJs(WebElement ele) {
+
+		jse.executeScript("arguments[0].click();", ele);
+
+	}
+
 }

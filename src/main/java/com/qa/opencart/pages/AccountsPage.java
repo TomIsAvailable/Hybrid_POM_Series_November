@@ -57,6 +57,7 @@ public class AccountsPage {
 	}
 
 	public SearchResultsPage doSearchProduct(String productName) {
+		elementUtils.pressEscape();
 		elementUtils.doSendKeys(searchText, productName);
 		elementUtils.clickAnElement(searchButton);
 		return new SearchResultsPage(driver);

@@ -11,7 +11,7 @@ import com.qa.opencart.utils.Constant;
 
 public class AccountsPageTest extends BaseTest {
 
-	@BeforeClass
+	@BeforeClass()
 	public void accountsPageSetup() {
 
 		accountsPage = loginPage.loginOpenCart(prop.getProperty("username"), prop.getProperty("password"));
@@ -53,21 +53,21 @@ public class AccountsPageTest extends BaseTest {
 	public void logOutTest() {
 
 		Assert.assertTrue(accountsPage.logOutExist());
+
 	}
 
 	// Imac, Macbook Pro, Macbook Air
 
-	@DataProvider(name = "PRODUCTS")
-	public Object[][] getProductList() {
-
-		return new Object[][] { { "IMac" }, { "Macbook Pro" }, { "Macbook Air" } };
-	}
-
-	@Test(dataProvider = "PRODUCTS", priority = 4)
-	public void searchTest(String productName) {
-
-		accountsPage.doSearchProduct(productName);
-	}
+	/*
+	 * @DataProvider(name = "PRODUCTS") public Object[][] getProductList() {
+	 * 
+	 * return new Object[][] { { "IMac" }, { "Macbook Pro" }, { "Macbook Air" } }; }
+	 * 
+	 * @Test(dataProvider = "PRODUCTS", priority = 4) public void searchTest(String
+	 * productName) {
+	 * 
+	 * accountsPage.doSearchProduct(productName); }
+	 */
 
 	@DataProvider(name = "PRO_LIST")
 	public Object[][] PRO_LIST() {

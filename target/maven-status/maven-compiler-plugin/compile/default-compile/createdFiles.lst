@@ -1,0 +1,11 @@
+com\qa\opencart\pages\SearchResultsPage.class
+com\qa\opencart\utils\JSUtils.class
+com\qa\opencart\utils\ElementUtils.class
+com\qa\opencart\utils\TimeIUtils.class
+com\qa\opencart\pages\LoginPage.class
+com\qa\opencart\factory\DriverFactory.class
+com\qa\opencart\utils\Constant.class
+com\qa\opencart\factory\OptionsManager.class
+com\qa\opencart\pages\ProductInfoPage.class
+com\qa\opencart\pages\AccountsPage.class
+com\qa\opencart\utils\ExcelUtils.class

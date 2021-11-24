@@ -7,18 +7,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.qa.opencart.utils.ElementUtils;
+import com.qa.opencart.utils.JSUtils;
 
 public class SearchResultsPage {
 
 	private WebDriver driver;
 	private ElementUtils elementUtils;
+	private JSUtils jsUtils;
 
 	public SearchResultsPage(WebDriver driver) {
 		this.driver = driver;
 		elementUtils = new ElementUtils(this.driver);
+		jsUtils = new JSUtils(this.driver);
+
 	}
 
-	private By searchResutlsProduct = By.xpath("//*[@class='caption']/h4");
+	private By searchResutlsProduct = By.xpath("//*[@class='caption']/h4/a");
 
 	public int getProductCount() {
 
@@ -34,10 +38,12 @@ public class SearchResultsPage {
 
 			if (product.getText().equals(productName)) {
 
-				product.click();
+				jsUtils.scrollDownToElement(product);
+
+				jsUtils.clickAnElementJs(product);
 			}
 		}
-		
+
 		return new ProductInfoPage(driver);
 	}
 

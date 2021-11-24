@@ -24,8 +24,6 @@ public class ProductInfoPage {
 	public Map<String, String> getProdutMap() {
 
 		List<String> maps = elementUtils.getAllElementText(productMap);
-		
-		System.out.println(maps);
 
 		Map<String, String> prodMap = new HashMap<>();
 
